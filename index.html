@@ -24,8 +24,8 @@
     </div>
   </div>
 
-  <audio id="anniversaryAudio" loop>
-    <source src="Daniela_Ml_chov_-_Golden_Hour_Piano_Cover_(mp3.pm).mp3" type="audio/mpeg">
+   <audio id="anniversaryAudio" loop>
+    <source src="/congratulations.mp3" type="audio/mpeg">
     Tu navegador no soporta el elemento de audio.
   </audio>
 
@@ -45,6 +45,7 @@
       }
     }
 
+    // Soporte para móviles
     if (window.innerWidth <= 550) {
       card.addEventListener('click', () => {
         isOpen = !isOpen;
@@ -62,6 +63,7 @@
         }
       });
     } else {
+      // Soporte para Laptop/PC
       card.addEventListener('mouseover', () => {
         playAudio();
       });
