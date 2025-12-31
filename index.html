@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Año Nuevo Danna</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="imgBox">
+      <div class="bark"></div>
+      <img src="feliz-año-nuevo-concepto-de-celebración-post-tarjeta-texto-brillante-sobre-fondo-oscuro-el-394276165.webp" alt="Año Nuevo Amistad">
+    </div>
+    <div class="details">
+      <h4 class="color2 margin">¡FELIZ AÑO 2026, DANNA!</h4>
+      <p>Danna no quería dejar pasar este momento para agradecerte por estar presente este año que termina.</p>
+      <p>Gracias por ser una amistad increible y por ser una persona tan increíble en mi vida.</p>
+      <p>Deseo que este 2026 venga cargado de éxitos, salud y mucha felicidad para ti porque te lo mereces todo.</p>
+      <p>Que logres cada meta que te propongas y si necesitas algo simpre voy a estar ahi para ti.</p>
+      <p>Sabes que yo te quiero con todo mi corazon porque eres una persona que me conoce tan bien</p>
+      <p>Disfruta mucho con tu familia y amigos.</p>
+      <p class="text-right">¡Feliz Año Nuevo! Con cariño, Abiel ♥</p>
+    </div>
+  </div>
+
+  <audio id="anniversaryAudio" loop>
+    <source src="Daniela_Ml_chov_-_Golden_Hour_Piano_Cover_(mp3.pm).mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+    const card = document.querySelector('.card');
+    const audio = document.getElementById('anniversaryAudio');
+    let isOpen = false;
+    let audioPlaying = false;
+
+    function playAudio() {
+      if (!audioPlaying) {
+        audio.play().then(() => {
+          audioPlaying = true;
+        }).catch(error => {
+          console.log('Autoplay blocked:', error);
+        });
+      }
+    }
+
+    if (window.innerWidth <= 550) {
+      card.addEventListener('click', () => {
+        isOpen = !isOpen;
+        const imgBox = card.querySelector('.imgBox');
+        const bark = card.querySelector('.bark');
+        if (isOpen) {
+          imgBox.style.transform = 'rotateY(-90deg)';
+          bark.style.opacity = '1';
+          bark.style.boxShadow = '350px 200px 80px rgba(0, 0, 0, .3) inset';
+          playAudio();
+        } else {
+          imgBox.style.transform = 'rotateY(0deg)';
+          bark.style.opacity = '0';
+          bark.style.boxShadow = 'none';
+        }
+      });
+    } else {
+      card.addEventListener('mouseover', () => {
+        playAudio();
+      });
+    }
+  </script>
+</body>
+</html>
